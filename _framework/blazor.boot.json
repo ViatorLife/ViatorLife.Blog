@@ -1,12 +1,12 @@
 {
   "mainAssemblyName": "ViatorLife.Blog",
   "resources": {
-    "hash": "sha256-amZkMJlp9vJ1pP7m76ldGkfKJTrWlao3Tj9P037QPV0=",
+    "hash": "sha256-3BgOaewz6CVbdXXjRcLf5s9YE63oTD9iZVYeKBj3A5c=",
     "jsModuleNative": {
-      "dotnet.native.8.0.11.ijga2v6ybo.js": "sha256-VdKq87/z5NIxZKmuM+fv38XF+RcEb/bg3jVBwQSfwP4="
+      "dotnet.native.8.0.11.n1sf6xr5tz.js": "sha256-VdKq87/z5NIxZKmuM+fv38XF+RcEb/bg3jVBwQSfwP4="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.8.0.11.6kblpf2b9s.js": "sha256-nam8JTYKjhMKOTg6+FlihYP6JpWPGe3jjM9fiUFWzhY="
+      "dotnet.runtime.8.0.11.tlu74f9tf6.js": "sha256-nam8JTYKjhMKOTg6+FlihYP6JpWPGe3jjM9fiUFWzhY="
     },
     "wasmNative": {
       "dotnet.native.wasm": "sha256-1NJsNYy4gznvjVwzcG5w3Cl50enK1KB/7cKBMY+6jz4="
@@ -48,7 +48,7 @@
       "System.Text.Encodings.Web.wasm": "sha256-WfKm+69ytpkYln5CNXWqpnHWur1MjpXNefQpzkLFfo0=",
       "System.Text.Json.wasm": "sha256-MCEvGPGChDVzrhlwOMq++06jLnIywAmMxq1/IGtgj74=",
       "System.Text.RegularExpressions.wasm": "sha256-CHFZ6wJNvdsk1Q33Nj36SWEoxMf1d8WWIt7QpkqeGRY=",
-      "ViatorLife.Blog.wasm": "sha256-6VzUYTFt3AdVRsj4ME3HoWZunv0Rt2k++Nmp6juP5Mg="
+      "ViatorLife.Blog.wasm": "sha256-qbP5XxMkl1ujq+B9tyU4I+syyZAKDcwEN3K0bFYumPk="
     }
   },
   "cacheBootResources": true,
