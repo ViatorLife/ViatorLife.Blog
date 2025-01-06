@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ViatorLife.Blog",
   "resources": {
-    "hash": "sha256-3BgOaewz6CVbdXXjRcLf5s9YE63oTD9iZVYeKBj3A5c=",
+    "hash": "sha256-lJ9xEoeAkcQPDZxnGzVKsghXO/idA9kgglpzp0UuAnI=",
     "jsModuleNative": {
       "dotnet.native.8.0.11.n1sf6xr5tz.js": "sha256-VdKq87/z5NIxZKmuM+fv38XF+RcEb/bg3jVBwQSfwP4="
     },
@@ -48,7 +48,7 @@
       "System.Text.Encodings.Web.wasm": "sha256-WfKm+69ytpkYln5CNXWqpnHWur1MjpXNefQpzkLFfo0=",
       "System.Text.Json.wasm": "sha256-MCEvGPGChDVzrhlwOMq++06jLnIywAmMxq1/IGtgj74=",
       "System.Text.RegularExpressions.wasm": "sha256-CHFZ6wJNvdsk1Q33Nj36SWEoxMf1d8WWIt7QpkqeGRY=",
-      "ViatorLife.Blog.wasm": "sha256-qbP5XxMkl1ujq+B9tyU4I+syyZAKDcwEN3K0bFYumPk="
+      "ViatorLife.Blog.wasm": "sha256-6EL3V3LODZQdQHOm9bz9xtcCRduNmD15kE5+a1zjBRg="
     }
   },
   "cacheBootResources": true,
