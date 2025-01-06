@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Publish DotNet Blazor Project
-      run: dotnet publish ./src/ViatorLife.Blog.csproj -c Release -o release --nologo
+      run: dotnet publish ./src/ViatorLife.Blog/ViatorLife.Blog.csproj -c Release -o release --nologo
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
