@@ -1,0 +1,154 @@
+﻿@page "/dbtest"
+@using System.Net.Http.Headers
+@using System.Text.Json
+@inject HttpClient Http
+
+<PageTitle>DbTest</PageTitle>
+
+<h1>DbTest</h1>
+
+<p>This component demonstrates fetching data from the db.</p>
+<button id="list" @onclick="List">List</button>
+<button id="get" @onclick="Get">Get</button>
+<button id="update" @onclick="Update">Update</button>
+<button id="create" @onclick="Create">Create</button>
+<button id="delete" @onclick="Delete">Delete</button>
+
+@code {
+    private async Task List()
+    {
+        var query = @"
+        {
+          people {
+            items {
+              Id
+              Name
+            }
+          }
+        }";
+        var request = new HttpRequestMessage(HttpMethod.Post, "/data-api/graphql");
+        request.Content = new StringContent("{\"query\":\"" + query + "\"}");
+        request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+        var response = await Http.SendAsync(request);
+        var json = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(json);
+    }
+
+    private async Task Get()
+    {
+        var gql = @"
+            query getById($id: Int!) {
+                person_by_pk(Id: $id) {
+                    Id
+                    Name
+                }
+            }";
+
+        var query = new GraphQLRequest()
+        {
+            Query = gql,
+            Variables = new { 
+              id = 1 
+            },
+        };
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "/data-api/graphql");
+        request.Content = new StringContent(JsonSerializer.Serialize(query));
+        request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+        var response = await Http.SendAsync(request);
+        var json = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(json);
+    }
+
+    public class GraphQLRequest
+    {
+        public string Query { get; set; }
+        public object Variables { get; set; }
+    }
+
+    private async Task Update()
+    {
+        var id = 1;
+        var data = new {
+            Name = "Molly"
+        };
+
+      var gql = @"
+        mutation update($id: Int!, $item: UpdatePersonInput!) {
+          updatePerson(Id: $id, item: $item) {
+            Id
+            Name
+          }
+        }";
+
+        var query = new GraphQLRequest()
+        {
+            Query = gql,
+            Variables = new {
+                id = id,
+                item = data
+            }
+        };
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "/data-api/graphql");
+        request.Content = new StringContent(JsonSerializer.Serialize(query));
+        request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+        var response = await Http.SendAsync(request);
+        var json = await response.Content.ReadAsStringAsync();
+    }
+
+    private async Task Create()
+    {
+        var data = new {
+            Name = "Pedro"
+        };
+
+        var gql = @"
+            mutation create($item: CreatePersonInput!) {
+              createPerson(item: $item) {
+                Id
+                Name
+              }
+            }";
+
+        var query = new GraphQLRequest()
+        {
+            Query = gql,
+            Variables = new {
+                item = data
+            }
+        };
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "/data-api/graphql");
+        request.Content = new StringContent(JsonSerializer.Serialize(query));
+        request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+        var response = await Http.SendAsync(request);
+        var json = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(json);
+    }
+
+    private async Task Delete()
+    {
+        var gql = @"
+            mutation del($id: Int!) {
+              deletePerson(Id: $id) {
+                Id
+              }
+            }";
+
+        var query = new GraphQLRequest()
+        {
+            Query = gql,
+            Variables = new {
+                id = 3
+            }
+        };
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "/data-api/graphql");
+        request.Content = new StringContent(JsonSerializer.Serialize(query));
+        request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+        var response = await Http.SendAsync(request);
+        var json = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(json);
+    }
+}
