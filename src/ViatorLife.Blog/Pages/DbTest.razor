@@ -36,6 +36,13 @@
 
     private async Task Get()
     {
+        var id = 1;
+        var endpoint = "/data-api/rest/Person/Id";
+        var response = await Http.GetAsync($"{endpoint}/{id}");
+        var result = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(result);
+
+        /*
         var gql = @"
             query getById($id: Int!) {
                 person_by_pk(Id: $id) {
@@ -58,6 +65,7 @@
         var response = await Http.SendAsync(request);
         var json = await response.Content.ReadAsStringAsync();
         Console.WriteLine(json);
+        */
     }
 
     public class GraphQLRequest
