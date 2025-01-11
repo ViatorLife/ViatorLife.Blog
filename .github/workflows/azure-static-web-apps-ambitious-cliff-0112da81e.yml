@@ -30,7 +30,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "src/ViatorLife.Blog" # App source code path
           api_location: "src/ViatorLife.Blog.Api"
-          data_api_location: "src/ViatorLife.Blog/swa-db-connections"
+          data_api_location: "src/ViatorLife.Blog"
           output_location: "wwwroot" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
